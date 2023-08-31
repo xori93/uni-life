@@ -1,0 +1,30 @@
+.selection-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    width: 50%;
+    margin: 90px;
+    gap: 10px;
+}
+
+.selection-image{
+    width: 18%;
+    margin-left: -90px;
+    padding: 10px;
+    margin-bottom: -60px;
+}
+ /* .selection-container p{
+    display: flex;
+    flex-wrap: wrap;
+
+ } */
+
+ .selection-man-image{
+   width: 350px;
+   height: 350px;
+   position: absolute;
+   left: 460px;
+   bottom: -193px;
+
+ }

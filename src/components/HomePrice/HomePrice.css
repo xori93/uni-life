@@ -1,0 +1,30 @@
+.home-price-container{
+    width: 45%;
+    height: 60%;
+    border-radius: 28px;
+    padding: 15px;
+
+}
+
+.home-price-container h2{
+    margin: 25px;
+}
+
+
+.bedroom-container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 45%;
+    border-bottom: 1px solid #CED3D8;
+    padding: 15px;
+}
+
+.bedroom{
+    margin-top: 15px;
+}
+
+.border-container{
+    border-radius: 18px;
+    border: 1px solid #CED3D8;
+}

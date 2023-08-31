@@ -1,0 +1,50 @@
+.home-image-container{
+    /* margin: 20px; */
+    width: 40%;
+    /* border: 1px solid red; */
+}
+
+.top{
+    object-fit: cover;
+    overflow: hidden;
+    width: 100%;
+    height: 60%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.top img {
+    width: 40%;
+    height: 100px;
+    transition: 0.5s;
+}
+
+.top:hover{
+    scale: 120%;
+}
+
+.bottom-image{
+    display: flex;
+    gap: 20px;
+    
+}
+
+.bottom{
+    width: 78%;
+    height: 40px;
+    border-radius: 18px;
+    cursor: pointer;
+    display: flex;
+}
+
+.bottom img {
+    width: 30%;
+    height: 100px;
+    transition: 0.5s;
+    margin: 5px;
+    border-radius: 18px;
+}
+
+.bottom img:hover{
+    scale: 120%;
+}

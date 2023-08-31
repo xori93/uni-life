@@ -1,0 +1,112 @@
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: whitesmoke;
+    height: 40px;
+    padding: 2vh;
+    /* margin-top: 20px; */
+    background-color: #00A2E1;
+}
+
+.header-item{
+    display: flex;
+    column-gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-h3{
+    text-decoration-line: none;
+}
+
+.house-image{
+    width: 30px;
+    height: 25px;
+}
+
+.shortlist-button{
+    color: whitesmoke;
+    border: none;
+    background-color: #00A2E1;
+    margin-right: 40px;
+}
+
+.contact-us-button{
+    color: whitesmoke;
+    border: none;
+    background-color: #00A2E1;
+    margin-right: 25px;
+}
+
+.header-button{
+    display: flex;
+}
+
+.mail-icon{
+    margin-right: 7px;
+}
+
+.icon-contact{
+    display: flex;
+}
+
+.heart-icon{
+    margin-right: 7px;
+}
+
+.header-container h3{
+    color: whitesmoke;
+    text-decoration: none;
+    
+}
+
+
+
+.modal{
+    line-height: 50px;
+    /* width: 100px; */
+    /* margin-bottom: 20px; */
+    /* position: relative; */
+    /* display: flex; */
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  form input,
+  form textarea { 
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+
+  form input:focus,
+  form textarea:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(102, 92, 171, 0.3);
+  }
+
+  form button[type='submit'] {
+    background-color: #3A5295;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  form button[type='submit']:hover {
+    background-color: var(--primary-bg);
+    background-color: #879bd3;
+  }
+
+  
