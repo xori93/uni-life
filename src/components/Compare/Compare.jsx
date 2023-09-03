@@ -6,21 +6,21 @@ function Compare() {
     <div className="compare-container">
         
         <div className="info-box">
-        <img src="src\assets\search.png"/>
+        <img src="\search.png"/>
         <h4>Search</h4>
         <p>Find your dream home in the perfect
            area near your university.</p>
         </div>
 
         <div className="info-box">
-            <img src="src\assets\check.png" />
+            <img src="\check.png" />
             <h4>Compare</h4>
             <p>Compare student accommodation to 
                find the right home for you.</p>
         </div>
 
         <div className="info-box">
-        <img src="src\assets\bills.png" />
+        <img src="\bills.png" />
             <h4>Bills Included</h4>
             <p>Bills are included in all rent prices. 
                No hidden fees.</p>
