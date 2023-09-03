@@ -17,9 +17,20 @@ function CityDetails() {
     const [cityDetails, setCityDetails] = React.useState('')
     const [properties, setProperties] = React.useState([])
     const [cityInfo, setCityInfo] = useState([])
-    // const options = [
 
-    // ]
+    // state variable useState({...query})
+
+    const [minBedroom, setMinBedroom] = React.useState('')
+    const [minBathroom, setMinBathroom] = React.useState('')
+    const [maxPrice, setMaxPrice] = React.useState('')
+    const [homeType, setHomeType] = React.useState('')
+    const bedNums = [1,2,3,4,5,6]
+    const bathNums = [1,2,3]
+    const priceNums = [500, 1000, 1500, 2000, 10000]
+    const homeTypes = ['Detached', 'Apartment','Semi-Detached']
+    const [propCount, setPropCount] = React.useState(0)
+
+    
 
 
     React.useEffect(
@@ -46,8 +57,31 @@ function CityDetails() {
                 setCityInfo(res.data.data[0])
             })
             .catch(err=>console.log(err))
-        },[]
+        }, []
     )
+
+    React.useEffect(
+        ()=>{
+            const query={
+                city_id: cityId,
+                bedroom_count:minBedroom,
+                bathroom_count:minBathroom,
+                rent:maxPrice,
+                property_type:homeType
+              }
+              console.log('its running')
+              axios.post(`https://unilife-server.herokuapp.com/properties/filter`,{query})
+              .then(res=>{
+                  console.log(res.data.response)
+                  setProperties(res.data.response)
+                  setPropCount(res.data.count)
+              })
+              .catch(err=>console.log(err))
+        },[minBedroom, minBathroom, maxPrice, homeType]
+    )
+
+
+
 
     return (
         <div className="city-details-container">
@@ -57,62 +91,40 @@ function CityDetails() {
                 <div className="select-options">
                     <div className="option">
                         <h4>Min Bedroom</h4>
-                        <select>
+                        <select onChange={(e) => setMinBedroom(e.target.value)}>
                             <option value="disable selected">Any bedroom</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                       
+                            {bedNums.map((num) => <option key={num} value={num}>{num}</option>)}
                         </select>
                     </div>
 
                     <div className="option">
                         <h4>Min Bathroom</h4>
-                    <select>
+                    <select onChange={(e) => setMinBathroom(e.target.value)}>
                         <option value="disable selected">Any bathroom</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-
+                        {bathNums.map((num) => <option key={num} value={num}>{num}</option>)}
                     </select>
                     </div>
 
                     <div className="option">
                         <h4>Max Price</h4>
-                    <select>
+                    <select onChange={(e) => setMaxPrice(e.target.value)}>
                         <option value="disable selected">Any price</option>
-                        <option>600</option>
-                        <option>1500</option>
-                        <option>2450</option>
-                        <option>900</option>
-                        <option>1200</option>
-
-
+                        {priceNums.map((num) => <option key={num} value={num}>{num === 10000 ? "3000 +" : num}</option>)}
                     </select>
                     </div>
 
                     <div className="option">
                         <h4>Home Type</h4>
-                    <select>
-                        <option value="disable selected">any type</option>
-                        <option>Detached</option>
-                        <option>Semi-Detached</option>
-                        <option>Apartment</option>
-                
+                    <select onChange={(e) => setHomeType(e.target.value)}>
+                        <option value="disable selected">Any Type</option>
+                        {homeTypes.map((item) => <option key={item} value={item}>{item}</option>)}
                         </select>
                     </div>
                 </div>
             </div>
 
             <div>
-                <h1>{cityDetails.total} Properies in {cityDetails.city_name}</h1>
+                <h1>{propCount} Properies in {cityDetails.city_name}</h1>
 
 
             </div>
